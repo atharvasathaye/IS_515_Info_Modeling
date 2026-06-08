@@ -1,0 +1,27 @@
+SELECT * 
+FROM EMPLOYEE 
+WHERE Salary > 40000;
+
+
+SELECT * 
+FROM EMPLOYEE 
+WHERE Sup_ssn IS NULL;
+
+
+SELECT MAX(Salary) AS Highest_Salary 
+FROM EMPLOYEE;
+
+
+SELECT * 
+FROM EMPLOYEE 
+WHERE Salary = (SELECT MAX(Salary) FROM EMPLOYEE);
+
+
+SELECT Dnum, COUNT(Essn) AS Number_of_Employees 
+FROM EMPLOYEE 
+GROUP BY Dnum;
+
+
+SELECT Dnum, SUM(Salary) AS Total_Salary 
+FROM EMPLOYEE 
+GROUP BY Dnum;
